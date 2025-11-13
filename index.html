@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Blockchain Learning Web</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-950 text-slate-100 antialiased">
+    <div class="flex min-h-screen flex-col">
+      <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur">
+        <div
+          class="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-5 md:px-6"
+        >
+          <div class="flex items-center gap-4">
+            <div
+              class="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500 font-semibold text-slate-900"
+              aria-label="Blockchain Learning Web logo"
+            >
+              BC
+            </div>
+            <div>
+              <p class="text-lg font-semibold md:text-xl">
+                Blockchain Learning Web
+              </p>
+              <p class="text-sm text-slate-400">
+                Eksplorasi Teknologi Blockchain secara Interaktif
+              </p>
+            </div>
+          </div>
+          <nav
+            class="flex w-full flex-wrap items-center justify-between gap-2 md:w-auto"
+            aria-label="Halaman simulasi blockchain"
+          >
+            <a href="index.html" class="rounded-lg px-4 py-2 text-sm font-medium bg-slate-800 text-white shadow-inner shadow-emerald-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">Home</a>
+            <a href="hash.html" class="rounded-lg px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-slate-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">Hash</a>
+            <a href="block.html" class="rounded-lg px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-slate-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">Block</a>
+            <a href="chain.html" class="rounded-lg px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-slate-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">Blockchain</a>
+            <a href="ecc.html" class="rounded-lg px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-slate-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">ECC Signature</a>
+            <a href="consensus.html" class="rounded-lg px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-slate-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">Konsensus</a>
+            <a href="about.html" class="rounded-lg px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-slate-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">About</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="mx-auto w-full max-w-7xl flex-1 px-4 py-10 md:px-6 md:py-12">
+        <!-- Page: Home -->
+        <section
+          id="page-home"
+          data-page
+          class="space-y-8 rounded-2xl border border-slate-800 bg-slate-900/40 p-6 shadow-xl shadow-emerald-500/5"
+          aria-hidden="false"
+          role="tabpanel"
+          tabindex="0"
+          aria-labelledby="tab-home"
+        >
+          <div class="flex flex-col gap-6 md:flex-row md:items-center">
+            <div class="flex-1 space-y-4">
+              <p class="text-2xl font-semibold leading-tight md:text-4xl">
+                Selamat Datang di Website Belajar Blockchain
+              </p>
+              <p class="max-w-3xl text-base text-slate-300 md:text-lg">
+                Eksplorasi konsep inti blockchain melalui simulasi interaktif.
+                Ikuti panduan penggunaan, pahami dasar teori, dan pelajari setiap
+                modul untuk menguasai teknologi yang menggerakkan ekonomi digital
+                modern.
+              </p>
+            </div>
+            <div
+              class="flex flex-col items-start justify-center rounded-xl border border-slate-800 bg-slate-950/60 p-4 text-left shadow-lg shadow-emerald-500/10 md:min-w-[260px]"
+            >
+              <p class="text-sm uppercase tracking-wide text-slate-400">
+                Waktu Sistem
+              </p>
+              <p id="datetime" class="mt-2 text-l font-semibold text-emerald-400">
+                ...
+              </p>
+            </div>
+          </div>
+
+          <div class="grid gap-6 lg:grid-cols-2">
+            <article
+              class="rounded-2xl border border-slate-800 bg-slate-950/60 p-6 shadow-lg shadow-slate-950/40"
+              aria-label="Petunjuk penggunaan"
+              tabindex="0"
+            >
+              <h2 class="text-xl font-semibold text-emerald-400">
+                Petunjuk Penggunaan
+              </h2>
+              <ul class="mt-4 space-y-3 text-sm text-slate-300 md:text-base">
+                <li>
+                  1. Pilih modul melalui menu di bagian atas sesuai materi yang ingin
+                  dipelajari.
+                </li>
+                <li>
+                  2. Ikuti deskripsi langkah pada tiap modul sebelum mulai bereksperimen.
+                </li>
+                <li>
+                  3. Ubah input, tekan tombol tindakan, dan perhatikan hasil perubahan.
+                </li>
+                <li>
+                  4. Gunakan menu Konsensus untuk melihat dampak transaksi terhadap setiap
+                  node.
+                </li>
+                <li>
+                  5. Catat insight penting dan ulangi proses untuk memperkuat pemahaman.
+                </li>
+              </ul>
+            </article>
+
+            <article
+              class="rounded-2xl border border-slate-800 bg-slate-950/60 p-6 shadow-lg shadow-slate-950/40"
+              aria-label="Dasar teori teknologi blockchain"
+              tabindex="0"
+            >
+              <h2 class="text-xl font-semibold text-emerald-400">
+                Dasar Teori Teknologi Blockchain
+              </h2>
+              <p class="mt-4 text-sm leading-relaxed text-slate-300 md:text-base">
+                Blockchain adalah buku besar terdistribusi yang tersusun atas blok berisi
+                transaksi dan saling terhubung melalui hash kriptografis. Setiap blok
+                memuat data, hash blok sebelumnya, timestamp, serta nonce. Keamanan
+                tercapai melalui fungsi hash satu arah, mekanisme konsensus (misalnya
+                Proof of Work), dan kriptografi kunci publik untuk otentikasi transaksi.
+                Desentralisasi memastikan tidak ada satu entitas pun yang memiliki kontrol
+                tunggal, sehingga data menjadi transparan dan tahan manipulasi.
+              </p>
+            </article>
+          </div>
+
+          <article
+            class="rounded-2xl border border-slate-800 bg-slate-950/60 p-6 shadow-lg shadow-slate-950/40"
+            aria-label="Penjelasan menu"
+            tabindex="0"
+          >
+            <h2 class="text-xl font-semibold text-emerald-400">
+              Penjelasan Menu & Teknik yang Dipelajari
+            </h2>
+            <div class="mt-4 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              <div class="space-y-2 rounded-xl border border-slate-800 bg-slate-900/70 p-4">
+                <h3 class="text-lg font-semibold text-white">Home</h3>
+                <p class="text-sm text-slate-300">
+                  Ringkasan teori, panduan penggunaan, dan akses cepat ke semua materi
+                  simulasi blockchain.
+                </p>
+              </div>
+              <div class="space-y-2 rounded-xl border border-slate-800 bg-slate-900/70 p-4">
+                <h3 class="text-lg font-semibold text-white">Hash</h3>
+                <p class="text-sm text-slate-300">
+                  Pelajari fungsi hash SHA-256. Ketik teks apa pun dan amati bagaimana
+                  perubahan kecil menghasilkan hash yang berbeda jauh.
+                </p>
+              </div>
+              <div class="space-y-2 rounded-xl border border-slate-800 bg-slate-900/70 p-4">
+                <h3 class="text-lg font-semibold text-white">Block</h3>
+                <p class="text-sm text-slate-300">
+                  Simulasikan proses mining blok tunggal dengan menyesuaikan nonce, melihat
+                  hash, dan mengatur kecepatan penambangan.
+                </p>
+              </div>
+              <div class="space-y-2 rounded-xl border border-slate-800 bg-slate-900/70 p-4">
+                <h3 class="text-lg font-semibold text-white">Blockchain</h3>
+                <p class="text-sm text-slate-300">
+                  Bangun rantai blok, atur data blok, dan pahami mengapa perubahan hash
+                  memengaruhi blok berikutnya.
+                </p>
+              </div>
+              <div class="space-y-2 rounded-xl border border-slate-800 bg-slate-900/70 p-4">
+                <h3 class="text-lg font-semibold text-white">ECC Signature</h3>
+                <p class="text-sm text-slate-300">
+                  Lihat cara kunci privat dan publik digunakan untuk menandatangani dan
+                  memverifikasi pesan menggunakan algoritma elliptic curve.
+                </p>
+              </div>
+              <div class="space-y-2 rounded-xl border border-slate-800 bg-slate-900/70 p-4">
+                <h3 class="text-lg font-semibold text-white">Konsensus</h3>
+                <p class="text-sm text-slate-300">
+                  Simulasikan transaksi antar pengguna, proses mining massal, verifikasi,
+                  dan mekanisme kesepakatan antar node.
+                </p>
+              </div>
+              <div class="space-y-2 rounded-xl border border-slate-800 bg-slate-900/70 p-4">
+                <h3 class="text-lg font-semibold text-white">About</h3>
+                <p class="text-sm text-slate-300">
+                  Kenali pengembang aplikasi dan hubungi melalui kontak yang tersedia.
+                </p>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <!-- Halaman lain dipisah ke file terpisah: hash.html, block.html, chain.html, ecc.html, consensus.html, about.html -->
+      </main>
+
+      <footer class="border-t border-slate-800 bg-slate-900/80">
+        <div
+          class="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-6 px-4 py-6 text-center text-sm text-slate-400 md:flex-row md:text-left"
+        >
+          <div class="flex items-center gap-3 text-slate-200">
+            <div
+              class="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500 font-semibold text-slate-900"
+              aria-label="Blockchain Learning Web logo"
+            >
+              BC
+            </div>
+            <div>
+              <p class="text-s font-semibold text-white">Blockchain Learning Web</p>
+              <p class="text-xs text-slate-400">Belajar Blockchain untuk Semua</p>
+            </div>
+          </div>
+          <div class="space-y-1">
+            <p class="font-semibold text-slate-200">Kontak & Sosial Media</p>
+            <div class="flex flex-wrap items-center justify-center gap-3 text-xs text-slate-300 md:justify-start">
+              <a
+                href="mailto:ekaaabayuuu@gmail.com"
+                class="rounded-lg border border-slate-800 px-3 py-1 transition hover:border-emerald-400 hover:text-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                aria-label="Kirim email ke pengembang"
+              >
+                Email
+              </a>
+              <a
+                href="https://linkedin.com/in/ekabayusakhrulban/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="rounded-lg border border-slate-800 px-3 py-1 transition hover:border-emerald-400 hover:text-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                aria-label="Kunjungi LinkedIn pengembang"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="https://github.com/ekabaeu"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="rounded-lg border border-slate-800 px-3 py-1 transition hover:border-emerald-400 hover:text-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                aria-label="Kunjungi GitHub pengembang"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://instagram.com/ekabaeu"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="rounded-lg border border-slate-800 px-3 py-1 transition hover:border-emerald-400 hover:text-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                aria-label="Kunjungi Instagram pengembang"
+              >
+                Instagram
+              </a>
+            </div>
+          </div>
+          <p class="text-xs text-slate-500">
+            © <span class="font-semibold text-slate-300">2025</span> Blockchain Learning Web.
+            All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- elliptic library first, then app script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/elliptic/6.5.4/elliptic.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

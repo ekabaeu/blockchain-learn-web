@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Konsensus - Blockchain Learning Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-950 text-slate-100 antialiased">
+    <div class="flex min-h-screen flex-col">
+      <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur">
+        <div class="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-5 md:px-6">
+          <div class="flex items-center gap-4">
+            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500 font-semibold text-slate-900" aria-label="Blockchain Learning Web logo">BC</div>
+            <div>
+              <p class="text-lg font-semibold md:text-xl">Blockchain Learning Web</p>
+              <p class="text-sm text-slate-400">Eksplorasi Teknologi Blockchain secara Interaktif</p>
+            </div>
+          </div>
+          <nav class="flex w-full flex-wrap items-center justify-between gap-2 md:w-auto" aria-label="Halaman simulasi blockchain">
+            <a href="index.html" class="rounded-lg px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-slate-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">Home</a>
+            <a href="hash.html" class="rounded-lg px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-slate-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">Hash</a>
+            <a href="block.html" class="rounded-lg px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-slate-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">Block</a>
+            <a href="chain.html" class="rounded-lg px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-slate-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">Blockchain</a>
+            <a href="ecc.html" class="rounded-lg px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-slate-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">ECC Signature</a>
+            <a href="consensus.html" class="rounded-lg px-4 py-2 text-sm font-medium text-white bg-slate-800 shadow-inner shadow-emerald-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">Konsensus</a>
+            <a href="about.html" class="rounded-lg px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-slate-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">About</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="mx-auto w-full max-w-7xl flex-1 px-4 py-10 md:px-6 md:py-12">
+        <section class="space-y-6 rounded-2xl border border-slate-800 bg-slate-900/40 p-6 shadow-lg shadow-emerald-500/5">
+          <div class="space-y-2">
+            <h2 class="text-2xl font-semibold text-white">Simulasi Konsensus</h2>
+            <p class="text-sm text-slate-300 md:text-base">
+              Kelola transaksi antar tiga pengguna, jalankan mining serentak, verifikasi,
+              dan capai konsensus untuk menyeragamkan data antar node.
+            </p>
+          </div>
+          <div class="grid gap-6 lg:grid-cols-3">
+            <div
+              class="wallet flex flex-col gap-4 rounded-2xl border border-slate-800 bg-slate-950/60 p-5 shadow-lg shadow-slate-950/40"
+              data-user="A"
+              tabindex="0"
+              aria-label="Dompet user A"
+            >
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-white">User A</h3>
+                <span class="rounded-full bg-slate-800 px-3 py-1 text-sm text-emerald-300">
+                  Saldo: <span id="saldo-A">100</span>
+                </span>
+              </div>
+              <label class="flex flex-col gap-2 text-sm font-medium text-slate-200">
+                Penerima
+                <select
+                  id="receiver-A"
+                  class="rounded-lg border border-slate-800 bg-slate-950/70 px-3 py-2 text-slate-100 shadow-inner shadow-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                  aria-label="Penerima transaksi user A"
+                >
+                  <option value="B">User B</option>
+                  <option value="C">User C</option>
+                </select>
+              </label>
+              <label class="flex flex-col gap-2 text-sm font-medium text-slate-200">
+                Jumlah
+                <input
+                  id="amount-A"
+                  type="number"
+                  min="1"
+                  value="10"
+                  class="rounded-lg border border-slate-800 bg-slate-950/70 px-3 py-2 text-slate-100 shadow-inner shadow-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                  aria-label="Jumlah transaksi user A"
+                />
+              </label>
+              <button
+                id="send-A"
+                class="rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 focus-visible:ring-emerald-500"
+                type="button"
+                aria-label="Kirim transaksi dari user A"
+              >
+                Kirim
+              </button>
+            </div>
+
+            <div
+              class="wallet flex flex-col gap-4 rounded-2xl border border-slate-800 bg-slate-950/60 p-5 shadow-lg shadow-slate-950/40"
+              data-user="B"
+              tabindex="0"
+              aria-label="Dompet user B"
+            >
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-white">User B</h3>
+                <span class="rounded-full bg-slate-800 px-3 py-1 text-sm text-emerald-300">
+                  Saldo: <span id="saldo-B">100</span>
+                </span>
+              </div>
+              <label class="flex flex-col gap-2 text-sm font-medium text-slate-200">
+                Penerima
+                <select
+                  id="receiver-B"
+                  class="rounded-lg border border-slate-800 bg-slate-950/70 px-3 py-2 text-slate-100 shadow-inner shadow-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                  aria-label="Penerima transaksi user B"
+                >
+                  <option value="A">User A</option>
+                  <option value="C">User C</option>
+                </select>
+              </label>
+              <label class="flex flex-col gap-2 text-sm font-medium text-slate-200">
+                Jumlah
+                <input
+                  id="amount-B"
+                  type="number"
+                  min="1"
+                  value="10"
+                  class="rounded-lg border border-slate-800 bg-slate-950/70 px-3 py-2 text-slate-100 shadow-inner shadow-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                  aria-label="Jumlah transaksi user B"
+                />
+              </label>
+              <button
+                id="send-B"
+                class="rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 focus-visible:ring-emerald-500"
+                type="button"
+                aria-label="Kirim transaksi dari user B"
+              >
+                Kirim
+              </button>
+            </div>
+
+            <div
+              class="wallet flex flex-col gap-4 rounded-2xl border border-slate-800 bg-slate-950/60 p-5 shadow-lg shadow-slate-950/40"
+              data-user="C"
+              tabindex="0"
+              aria-label="Dompet user C"
+            >
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-white">User C</h3>
+                <span class="rounded-full bg-slate-800 px-3 py-1 text-sm text-emerald-300">
+                  Saldo: <span id="saldo-C">100</span>
+                </span>
+              </div>
+              <label class="flex flex-col gap-2 text-sm font-medium text-slate-200">
+                Penerima
+                <select
+                  id="receiver-C"
+                  class="rounded-lg border border-slate-800 bg-slate-950/70 px-3 py-2 text-slate-100 shadow-inner shadow-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                  aria-label="Penerima transaksi user C"
+                >
+                  <option value="A">User A</option>
+                  <option value="B">User B</option>
+                </select>
+              </label>
+              <label class="flex flex-col gap-2 text-sm font-medium text-slate-200">
+                Jumlah
+                <input
+                  id="amount-C"
+                  type="number"
+                  min="1"
+                  value="10"
+                  class="rounded-lg border border-slate-800 bg-slate-950/70 px-3 py-2 text-slate-100 shadow-inner shadow-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                  aria-label="Jumlah transaksi user C"
+                />
+              </label>
+              <button
+                id="send-C"
+                class="rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 focus-visible:ring-emerald-500"
+                type="button"
+                aria-label="Kirim transaksi dari user C"
+              >
+                Kirim
+              </button>
+            </div>
+          </div>
+
+          <div class="grid gap-6 lg:grid-cols-[2fr,1fr]">
+            <label class="flex flex-col gap-3 text-sm font-medium text-slate-200">
+              Mempool (Pending Transactions)
+              <textarea
+                id="mempool"
+                rows="5"
+                class="rounded-xl border border-slate-800 bg-slate-950/70 p-4 text-sm text-slate-100 shadow-inner shadow-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                placeholder="Setiap transaksi di baris baru. Contoh: A -> B : 10"
+                aria-label="Daftar transaksi yang menunggu mining"
+              ></textarea>
+            </label>
+            <div class="flex flex-col gap-3">
+              <button
+                id="btn-mine-all"
+                class="rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 focus-visible:ring-emerald-500"
+                type="button"
+                aria-label="Proses mining semua transaksi di mempool"
+              >
+                Mine Semua Transaksi
+              </button>
+              <button
+                id="btn-verify-consensus"
+                class="rounded-lg bg-slate-800 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 focus-visible:ring-emerald-500"
+                type="button"
+                aria-label="Verifikasi integritas chain"
+              >
+                Verify
+              </button>
+              <button
+                id="btn-consensus"
+                class="rounded-lg bg-purple-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-purple-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 focus-visible:ring-emerald-500"
+                type="button"
+                aria-label="Menjalankan konsensus antar node"
+              >
+                Consensus
+              </button>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <h3 class="text-lg font-semibold text-white">Blockchain Tiap User</h3>
+            <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3" id="chains">
+              <div class="space-y-3 rounded-2xl border border-slate-800 bg-slate-950/60 p-4">
+                <h4 class="text-sm font-semibold uppercase tracking-wide text-slate-400">
+                  Database User A
+                </h4>
+                <div
+                  id="chain-A"
+                  class="chain-row flex flex-col gap-3"
+                  aria-label="Chain milik pengguna A"
+                ></div>
+              </div>
+              <div class="space-y-3 rounded-2xl border border-slate-800 bg-slate-950/60 p-4">
+                <h4 class="text-sm font-semibold uppercase tracking-wide text-slate-400">
+                  Database User B
+                </h4>
+                <div
+                  id="chain-B"
+                  class="chain-row flex flex-col gap-3"
+                  aria-label="Chain milik pengguna B"
+                ></div>
+              </div>
+              <div class="space-y-3 rounded-2xl border border-slate-800 bg-slate-950/60 p-4">
+                <h4 class="text-sm font-semibold uppercase tracking-wide text-slate-400">
+                  Database User C
+                </h4>
+                <div
+                  id="chain-C"
+                  class="chain-row flex flex-col gap-3"
+                  aria-label="Chain milik pengguna C"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="border-t border-slate-800 bg-slate-900/80">
+        <div class="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-6 px-4 py-6 text-center text-sm text-slate-400 md:flex-row md:text-left">
+          <div class="flex items-center gap-3 text-slate-200">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500 font-semibold text-slate-900" aria-label="Blockchain Learning Web logo">BC</div>
+            <div>
+              <p class="text-s font-semibold text-white">Blockchain Learning Web</p>
+              <p class="text-xs text-slate-400">Belajar Blockchain untuk Semua</p>
+            </div>
+          </div>
+          <div class="space-y-1">
+            <p class="font-semibold text-slate-200">Kontak & Sosial Media</p>
+            <div class="flex flex-wrap items-center justify-center gap-3 text-xs text-slate-300 md:justify-start">
+              <a href="mailto:ekaaabayuuu@gmail.com" class="rounded-lg border border-slate-800 px-3 py-1 transition hover:border-emerald-400 hover:text-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500" aria-label="Kirim email ke pengembang">Email</a>
+              <a href="https://linkedin.com/in/ekabayusakhrulban" target="_blank" rel="noopener noreferrer" class="rounded-lg border border-slate-800 px-3 py-1 transition hover:border-emerald-400 hover:text-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500" aria-label="Kunjungi LinkedIn pengembang">LinkedIn</a>
+              <a href="https://github.com/ekabaeu" target="_blank" rel="noopener noreferrer" class="rounded-lg border border-slate-800 px-3 py-1 transition hover:border-emerald-400 hover:text-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500" aria-label="Kunjungi GitHub pengembang">GitHub</a>
+              <a href="https://instagram.com/ekabaeu" target="_blank" rel="noopener noreferrer" class="rounded-lg border border-slate-800 px-3 py-1 transition hover:border-emerald-400 hover:text-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500" aria-label="Kunjungi Instagram pengembang">Instagram</a>
+            </div>
+          </div>
+          <p class="text-xs text-slate-500">
+            © <span class="font-semibold text-slate-300">2025</span> Blockchain Learning Web.
+            All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/elliptic/6.5.4/elliptic.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+  </html>
+
+

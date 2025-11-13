@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Blockchain - Blockchain Learning Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-950 text-slate-100 antialiased">
+    <div class="flex min-h-screen flex-col">
+      <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur">
+        <div class="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-5 md:px-6">
+          <div class="flex items-center gap-4">
+            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500 font-semibold text-slate-900" aria-label="Blockchain Learning Web logo">BC</div>
+            <div>
+              <p class="text-lg font-semibold md:text-xl">Blockchain Learning Web</p>
+              <p class="text-sm text-slate-400">Eksplorasi Teknologi Blockchain secara Interaktif</p>
+            </div>
+          </div>
+          <nav class="flex w-full flex-wrap items-center justify-between gap-2 md:w-auto" aria-label="Halaman simulasi blockchain">
+            <a href="index.html" class="rounded-lg px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-slate-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">Home</a>
+            <a href="hash.html" class="rounded-lg px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-slate-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">Hash</a>
+            <a href="block.html" class="rounded-lg px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-slate-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">Block</a>
+            <a href="chain.html" class="rounded-lg px-4 py-2 text-sm font-medium text-white bg-slate-800 shadow-inner shadow-emerald-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">Blockchain</a>
+            <a href="ecc.html" class="rounded-lg px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-slate-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">ECC Signature</a>
+            <a href="consensus.html" class="rounded-lg px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-slate-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">Konsensus</a>
+            <a href="about.html" class="rounded-lg px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-slate-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">About</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="mx-auto w-full max-w-7xl flex-1 px-4 py-10 md:px-6 md:py-12">
+        <section class="space-y-6 rounded-2xl border border-slate-800 bg-slate-900/40 p-6 shadow-lg shadow-emerald-500/5">
+          <div class="space-y-2">
+            <h2 class="text-2xl font-semibold text-white">Blockchain Builder</h2>
+            <p class="text-sm text-slate-300 md:text-base">
+              Tambahkan blok secara berurutan, edit data, dan jalankan mining untuk melihat
+              hubungan hash antar blok dalam sebuah chain.
+            </p>
+          </div>
+          <div class="flex flex-col gap-6">
+            <div class="flex flex-wrap items-center gap-4">
+              <button
+                id="btn-add-block"
+                class="rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 focus-visible:ring-emerald-500"
+                type="button"
+                aria-label="Tambah blok baru ke dalam chain"
+              >
+                Tambah Block
+              </button>
+              <p class="text-sm text-slate-400">
+                Setiap blok memerlukan hash valid yang bergantung pada hash blok sebelumnya.
+              </p>
+            </div>
+            <div
+              id="blockchain"
+              class="grid gap-4 lg:grid-cols-2"
+              aria-live="polite"
+              aria-label="Daftar block pada chain"
+            ></div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="border-t border-slate-800 bg-slate-900/80">
+        <div class="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-6 px-4 py-6 text-center text-sm text-slate-400 md:flex-row md:text-left">
+          <div class="flex items-center gap-3 text-slate-200">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500 font-semibold text-slate-900" aria-label="Blockchain Learning Web logo">BC</div>
+            <div>
+              <p class="text-s font-semibold text-white">Blockchain Learning Web</p>
+              <p class="text-xs text-slate-400">Belajar Blockchain untuk Semua</p>
+            </div>
+          </div>
+          <div class="space-y-1">
+            <p class="font-semibold text-slate-200">Kontak & Sosial Media</p>
+            <div class="flex flex-wrap items-center justify-center gap-3 text-xs text-slate-300 md:justify-start">
+              <a href="mailto:ekaaabayuuu@gmail.com" class="rounded-lg border border-slate-800 px-3 py-1 transition hover:border-emerald-400 hover:text-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500" aria-label="Kirim email ke pengembang">Email</a>
+              <a href="https://linkedin.com/in/ekabayusakhrulban/" target="_blank" rel="noopener noreferrer" class="rounded-lg border border-slate-800 px-3 py-1 transition hover:border-emerald-400 hover:text-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500" aria-label="Kunjungi LinkedIn pengembang">LinkedIn</a>
+              <a href="https://github.com/ekabaeu" target="_blank" rel="noopener noreferrer" class="rounded-lg border border-slate-800 px-3 py-1 transition hover:border-emerald-400 hover:text-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500" aria-label="Kunjungi GitHub pengembang">GitHub</a>
+              <a href="https://instagram.com/ekabaeu" target="_blank" rel="noopener noreferrer" class="rounded-lg border border-slate-800 px-3 py-1 transition hover:border-emerald-400 hover:text-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500" aria-label="Kunjungi Instagram pengembang">Instagram</a>
+            </div>
+          </div>
+          <p class="text-xs text-slate-500">
+            © <span class="font-semibold text-slate-300">2025</span> Blockchain Learning Web.
+            All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/elliptic/6.5.4/elliptic.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+  </html>
+
+
